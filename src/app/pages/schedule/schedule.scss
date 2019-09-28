@@ -12,8 +12,26 @@ $categories: (
 );
 
 @each $track, $value in map-remove($categories) {
-  ion-item-sliding[track='#{$track}'] ion-label {
+  ion-item-sliding[track="#{$track}"] ion-label {
     border-left: 2px solid $value;
     padding-left: 10px;
   }
+}
+
+ion-content {
+  --background: linear-gradient(rgba(25, 25, 55, 0.3), rgba(25, 25, 55, 0.3)),
+    url("/assets/img/veg-wallpaper.jpg") no-repeat center center / cover;
+}
+
+/* .bg-image {
+  background-image: url("/assets/img/food.jpg");
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 100%;
+}
+ */
+.no-scroll .scroll-content {
+  overflow: hidden;
 }
