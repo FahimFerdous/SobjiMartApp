@@ -38,6 +38,13 @@ const routes: Routes = [
     loadChildren: () =>
       import("./pages/tutorial/tutorial.module").then(m => m.TutorialModule),
     canLoad: [CheckTutorial]
+  },
+  {
+    path: "input-location",
+    loadChildren: () =>
+      import("./pages/input-location/input-location.module").then(
+        m => m.InputLocationPageModule
+      )
   }
 ];
 

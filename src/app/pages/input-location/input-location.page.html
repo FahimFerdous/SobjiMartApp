@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/app/tabs/schedule"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Input Location</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding speaker-detail">
+  <div class="ion-text-center">
+    <form novalidate>
+      <ion-list>
+        <ion-item>
+          <ion-input
+            name="Location"
+            clearInput
+            placeholder="Location Name"
+          ></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" expand="block">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>
