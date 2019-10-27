@@ -5,6 +5,8 @@ import { AlertController, IonList, LoadingController, ModalController, ToastCont
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
+import { InputLocationService } from '../../services/input-location.service';
+import { input_location } from '../../../Model/input-location';
 
 @Component({
   selector: 'page-schedule',
@@ -23,6 +25,8 @@ export class SchedulePage implements OnInit {
   groups: any = [];
   confDate: string;
 
+  locations:input_location[]=[];
+  searchLtion:input_location[]=[];
   constructor(
     public alertCtrl: AlertController,
     public confData: ConferenceData,
@@ -30,13 +34,37 @@ export class SchedulePage implements OnInit {
     public modalCtrl: ModalController,
     public router: Router,
     public toastCtrl: ToastController,
-    public user: UserData
+    public user: UserData,
+    private locationService:InputLocationService
   ) { }
 
   ngOnInit() {
     this.updateSchedule();
-  }
+     
+    const allLocationInfos=this.locationService.getAllLocation()
+    .snapshotChanges()
+    .pipe()
+    .subscribe(s=>{
+      this.locations = [];
+      s.forEach(element => {
 
+        var y = element.payload.toJSON();        
+        y["key"] = element.key;   
+         this.locations.push(y as input_location);
+               
+      });
+    })
+
+  }
+ searchLocation(locationName){
+   console.log(locationName);
+  this.searchLtion=[];
+  let filterLocation = (locationName) ?
+     this.locations.filter(p =>p.locationName.toLowerCase()
+     .includes(locationName.toLowerCase())):
+      this.locations;      
+      this.searchLtion=filterLocation;
+ }
   updateSchedule() {
     // Close any open sliding items when the schedule updates
     if (this.scheduleList) {

@@ -85,9 +85,16 @@
       <h4 style="text-align:center; color:white">Select Area</h4>
       <ion-searchbar
         color="light"
-        animated
+        animated    
         placeholder="Enter Location"
+        #query 
+        (keyup)="searchLocation(query.value)"
       ></ion-searchbar>
+
+          <ion-item *ngFor="let location of searchLtion">{{location.locationName}}</ion-item>
+          
+
+ 
     </ion-col>
   </ion-row>
   <ion-row>
