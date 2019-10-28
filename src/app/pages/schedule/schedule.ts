@@ -26,6 +26,7 @@ export class SchedulePage implements OnInit {
   confDate: string;
 
   locations:input_location[]=[];
+  objLocation=new input_location();
   searchLtion:input_location[]=[];
   constructor(
     public alertCtrl: AlertController,
@@ -57,13 +58,16 @@ export class SchedulePage implements OnInit {
 
   }
  searchLocation(locationName){
-   console.log(locationName);
   this.searchLtion=[];
   let filterLocation = (locationName) ?
      this.locations.filter(p =>p.locationName.toLowerCase()
      .includes(locationName.toLowerCase())):
       this.locations;      
       this.searchLtion=filterLocation;
+ }
+ selectFromSearchResult(locationName){
+ this.objLocation.locationName=locationName;
+ this.searchLtion=[];
  }
   updateSchedule() {
     // Close any open sliding items when the schedule updates
