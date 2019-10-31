@@ -45,6 +45,13 @@ const routes: Routes = [
       import("./pages/input-location/input-location.module").then(
         m => m.InputLocationPageModule
       )
+  },
+  {
+    path: "select-option-page",
+    loadChildren: () =>
+      import("./pages/select-option-page/select-option-page.module").then(
+        m => m.SelectOptionPagePageModule
+      )
   }
 ];
 

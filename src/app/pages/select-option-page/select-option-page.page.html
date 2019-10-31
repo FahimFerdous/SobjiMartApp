@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button defaultHref="/app/tabs/schedule"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Shop Category</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="outer-content ">
+  <ion-list>
+    <ion-grid fixed>
+      <ion-row class="ion-align-items-stretch">
+        <ion-col size="12" size-md="6">
+          <ion-card class="speaker-card">
+            <ion-card-header class="list-design">
+              <ion-item
+                detail="false"
+                lines="none"
+                routerLink="/app/tabs/speakers"
+              >
+                <b>Vegetables</b>
+              </ion-item>
+            </ion-card-header>
+
+            <ion-card-content>
+              <a href="#"
+                ><img
+                  src="assets/img/vegetables.jpg"
+                  alt="image"
+                  style="height: 130px;"
+              /></a>
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="speaker-card">
+            <ion-card-header class="list-design">
+              <ion-item
+                detail="false"
+                lines="none"
+                routerLink="/app/tabs/speakers"
+              >
+                <b>Fruits</b>
+              </ion-item>
+            </ion-card-header>
+
+            <ion-card-content>
+              <a href="#"
+                ><img
+                  src="assets/img/mixed-fruits.jpg"
+                  alt="image"
+                  style="height: 130px;"
+              /></a>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+</ion-content>
