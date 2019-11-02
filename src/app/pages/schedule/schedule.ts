@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, IonList, LoadingController, ModalController, ToastController } from '@ionic/angular';
 
@@ -7,13 +7,14 @@ import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
 import { InputLocationService } from '../../services/input-location.service';
 import { input_location } from '../../../Model/input-location';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'page-schedule',
   templateUrl: 'schedule.html',
   styleUrls: ['./schedule.scss'],
 })
-export class SchedulePage implements OnInit {
+export class SchedulePage implements OnInit,OnDestroy {
   // Gets a reference to the list element
   @ViewChild('scheduleList', { static: true }) scheduleList: IonList;
 
@@ -24,7 +25,8 @@ export class SchedulePage implements OnInit {
   shownSessions: any = [];
   groups: any = [];
   confDate: string;
-
+  
+  subscription:Subscription;
   locations:input_location[]=[];
   objLocation=new input_location();
   searchLtion:input_location[]=[];
@@ -56,6 +58,9 @@ export class SchedulePage implements OnInit {
       });
     })
 
+  }
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
  searchLocation(locationName){
   this.searchLtion=[];
