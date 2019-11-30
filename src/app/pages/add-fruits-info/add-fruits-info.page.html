@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/select-option-page"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Fruit Info</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding speaker-detail">
+  <div class="ion-text-center">
+    <form novalidate>
+      <ion-list>
+        <ion-item>
+          <ion-label>Select Location</ion-label>
+
+          <ion-select value="Nikunjo" okText="Okay" cancelText="Dismiss">
+            <ion-select-option value="brown">Nikunjo</ion-select-option>
+            <ion-select-option value="blonde">Uttara</ion-select-option>
+            <ion-select-option value="black">Dhanmondi</ion-select-option>
+            <ion-select-option value="red">Basundhara</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Fruit Name</ion-label>
+          <ion-input name="FruitName" type="text" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Unit Price </ion-label>
+          <ion-input name="Unit Price" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Minimum Order</ion-label>
+          <ion-input name="MinimumOrder" type="text" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Market Price</ion-label>
+          <ion-input name="MarketPrice" type="text" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">In Stock (kg)</ion-label>
+          <ion-input name="Stock Amount" type="text" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Fruit Image</ion-label>
+          <!-- <ion-input  (change)="uploadFile($event.target.files)" type="file"></ion-input> -->
+          <ion-input
+            (change)="uploadFile($event.target.files)"
+            type="file"
+          ></ion-input>
+          <!-- <ion-input #union="ngModel" [(ngModel)]="userInfo.union" name="union" type="text" name="title" required></ion-input> -->
+        </ion-item>
+      </ion-list>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" expand="block">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>

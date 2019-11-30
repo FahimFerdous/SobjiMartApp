@@ -52,6 +52,41 @@ const routes: Routes = [
       import("./pages/select-option-page/select-option-page.module").then(
         m => m.SelectOptionPagePageModule
       )
+  },
+  {
+    path: "vegetable-list",
+    loadChildren: () =>
+      import("./pages/vegetable-list/vegetable-list.module").then(
+        m => m.VegetableListPageModule
+      )
+  },
+  {
+    path: "add-vegetable-inof",
+    loadChildren: () =>
+      import("./pages/add-vegetable-inof/add-vegetable-inof.module").then(
+        m => m.AddVegetableInofPageModule
+      )
+  },
+  {
+    path: "add-fruits-info",
+    loadChildren: () =>
+      import("./pages/add-fruits-info/add-fruits-info.module").then(
+        m => m.AddFruitsInfoPageModule
+      )
+  },
+  {
+    path: "add-location",
+    loadChildren: () =>
+      import("./pages/add-location/add-location.module").then(
+        m => m.AddLocationPageModule
+      )
+  },
+  {
+    path: "fruit-list",
+    loadChildren: () =>
+      import("./pages/fruit-list/fruit-list.module").then(
+        m => m.FruitListPageModule
+      )
   }
 ];
 
