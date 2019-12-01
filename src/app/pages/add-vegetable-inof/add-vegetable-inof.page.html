@@ -14,48 +14,52 @@
         <ion-item>
           <ion-label>Select Location</ion-label>
 
-          <ion-select value="Nikunjo" okText="Okay" cancelText="Dismiss">
-            <ion-select-option value="brown">Nikunjo</ion-select-option>
-            <ion-select-option value="blonde">Uttara</ion-select-option>
-            <ion-select-option value="black">Dhanmondi</ion-select-option>
-            <ion-select-option value="red">Basundhara</ion-select-option>
-          </ion-select>
+          <ion-select
+          #locationKey="ngModel"
+          [(ngModel)]="addVegetableInof.locationKey"
+          name="locationKey"          
+          value="brown"
+          okText="Okay"
+          cancelText="Dismiss"
+        >
+          <ion-select-option *ngFor="let location of locations" [value]="location.key">
+            {{ location.locationName }}
+          </ion-select-option>
+        </ion-select>
+
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">Vegetable Name</ion-label>
-          <ion-input name="VegetableName" type="text" required></ion-input>
+          <ion-input  #FruitName="ngModel"  [(ngModel)]="addVegetableInof.vegetableName" name="FruitName" type="text" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Unit Price </ion-label>
-          <ion-input name="Unit Price" type="number"></ion-input>
+          <ion-input #unitPrice="ngModel"  [(ngModel)]="addVegetableInof.unitPrice" name="UnitPrice" type="number"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Minimum Order</ion-label>
-          <ion-input name="MinimumOrder" type="text" required></ion-input>
+          <ion-input #minimumOrder="ngModel"  [(ngModel)]="addVegetableInof.minimumOrder" name="minimumOrder" type="text" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Market Price</ion-label>
-          <ion-input name="MarketPrice" type="text" required></ion-input>
+          <ion-input #marketPrice="ngModel"  [(ngModel)]="addVegetableInof.marketPrice" name="marketPrice" type="text" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">In Stock (kg)</ion-label>
-          <ion-input name="Stock Amount" type="text" required></ion-input>
+          <ion-input #inStock="ngModel"  [(ngModel)]="addVegetableInof.stockamount"  name="stockamount" type="text" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Vegetable Image</ion-label>
+          <ion-label position="floating">Fruit Image</ion-label>
           <!-- <ion-input  (change)="uploadFile($event.target.files)" type="file"></ion-input> -->
-          <ion-input
-            (change)="uploadFile($event.target.files)"
-            type="file"
-          ></ion-input>
+          <ion-input  (change)="uploadFile($event.target.files)" type="file"></ion-input>
           <!-- <ion-input #union="ngModel" [(ngModel)]="userInfo.union" name="union" type="text" name="title" required></ion-input> -->
         </ion-item>
       </ion-list>
 
       <ion-row>
         <ion-col>
-          <ion-button type="submit" expand="block">Submit</ion-button>
+          <ion-button (click)="save(addVegetableInof)" type="submit" expand="block">Submit</ion-button>
         </ion-col>
       </ion-row>
     </form>
