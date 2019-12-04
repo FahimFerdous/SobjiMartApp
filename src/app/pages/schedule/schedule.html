@@ -85,28 +85,38 @@
       <h4 style="text-align:center; color:white">Select Area</h4>
       <ion-searchbar
         color="light"
-        animated    
+        animated
         placeholder="Enter Location"
         [(ngModel)]="objLocation.locationName"
-        #query 
+        #query
         (keyup)="searchLocation(query.value)"
       ></ion-searchbar>
-      
-          <ion-item (click)="selectFromSearchResult(location.locationName)" *ngFor="let location of searchLtion">{{location.locationName}}</ion-item>
-        
- 
+
+      <ion-item
+        (click)="selectFromSearchResult(location.locationName)"
+        *ngFor="let location of searchLtion"
+        >{{location.locationName}}</ion-item
+      >
     </ion-col>
   </ion-row>
   <ion-row>
     <ion-col>
-      <ion-button color="success" type="submit" expand="block" routerLink="/select-option-page"
+      <ion-button
+        color="success"
+        type="submit"
+        expand="block"
+        routerLink="/select-option-page"
         >START SHOPPING</ion-button
       >
     </ion-col>
   </ion-row>
   <ion-row style="margin-top:15%">
     <ion-col size="6">
-      <ion-button style="height: 38px;" type="submit" expand="block"
+      <ion-button
+        routerLink="/login"
+        style="height: 38px;"
+        type="submit"
+        expand="block"
         >Sign In</ion-button
       >
     </ion-col>
@@ -116,6 +126,7 @@
         color="danger"
         type="submit"
         expand="block"
+        routerLink="/signup"
         >Sign Up</ion-button
       >
     </ion-col>

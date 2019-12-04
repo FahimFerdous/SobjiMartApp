@@ -87,7 +87,12 @@ const routes: Routes = [
       import("./pages/fruit-list/fruit-list.module").then(
         m => m.FruitListPageModule
       )
-  }
+  },
+  { path: 'approve-user', 
+  loadChildren: ()=> import("./pages/approve-user/approve-user.module").then(
+    m=>m.ApproveUserPageModule
+  ) }
+
 ];
 
 @NgModule({
