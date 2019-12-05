@@ -34,7 +34,7 @@ export class AddFruitsInfoPage implements OnInit {
          this.locations.push(y as input_location);
                
       });
-      console.log(this.locations);
+    
     })
 
   }
