@@ -20,6 +20,9 @@ export class FruitsInfoService {
   constructor(private db:AngularFireDatabase,
     private storage:AngularFireStorage,
     private toastController: ToastController) { }
+    getaddfrutsInfo(){
+      return this.db.list('/frutsInfo');
+    }
 
   startUpLoad(frutsInfo: fruitsInfo){
     

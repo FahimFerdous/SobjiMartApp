@@ -8,17 +8,20 @@
     ></ion-icon>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar placeholder="Search Item"></ion-searchbar>
+    <ion-searchbar  #q
+    [showCancelButton]="true"
+    (keyup)="filter(q.value)"
+    placeholder="Search Item"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid fixed>
+  <ion-grid fixed *ngFor="let fruitsInfo of fruitsInfo">
     <ion-card>
       <ion-row class="ion-align-items-stretch">
         <ion-col size="4">
           <img
-            src="assets/img/potato.jpg"
+            [src]="fruitsInfo.fruitImageUrl"
             alt=""
             style="height: 75px; width: 140px; margin-top: 15px;"
           />
@@ -28,7 +31,7 @@
             style="margin-top: 0px;
               font-size: 22px; margin-bottom: -5px;"
           >
-            Potato
+          {{fruitsInfo.fruitsName}}
           </p>
           <ion-item style="margin-left: -16px;">
             <ion-select
@@ -40,7 +43,7 @@
               <ion-select-option value="black">Tk 200 - 3kg</ion-select-option>
             </ion-select>
           </ion-item>
-          <p style="float: left; font-weight: 500;">Tk. 50</p>
+          <p style="float: left; font-weight: 500;">Tk.{{fruitsInfo.marketPrice}}</p>
           <ion-button
             color="primary"
             style="margin-left: 30%;

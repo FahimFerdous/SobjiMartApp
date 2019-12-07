@@ -10,7 +10,6 @@ import { AddVegetableInof } from '../../../Model/AddVegetableInof';
 export class VegetableListPage implements OnInit {
 vegetables:AddVegetableInof[]=[];
 filteredVegetables:AddVegetableInof[]=[];
-q;
   constructor(private vegetableInfoService:AddVegetableInofService) { }
 
   ngOnInit() {
