@@ -7,6 +7,7 @@ import { signUp } from '../../../Model/signup';
 import { UserServiceService } from '../../services/user-service.service';
 import { Observable,of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import undefined = require('firebase/empty-import');
 
 
 @Component({
@@ -18,7 +19,7 @@ export class SignupPage {
   signUp= new signUp()
   signup: UserOptions = { username: '', password: '' };
   submitted = false;
-
+errorMessage:string;
   constructor(
     public router: Router,
     public userData: UserData,
@@ -27,9 +28,19 @@ export class SignupPage {
 
   onSignup(form) {
     this.submitted = true;
-console.log(form)
-      this.UserService.signUp(form).then(t=>console.log(t))
-      this.router.navigateByUrl('/app/tabs/schedule');
+    console.log(form);
+
+    if(form.email!=""&&form.password!=""&&form.length!= 0&&form.email&&form.password) {
+      this.UserService.signUp(form).then(t=>this.router.navigateByUrl('/app/tabs/schedule')).catch(error=>{
+        // alert(error.message);
+        this.errorMessage=error.message;
+      });
+  }
+      // if(form!=null&&form!=undefined&&form!=""){
+       
+      // }
+     
+      
    
   }
 }

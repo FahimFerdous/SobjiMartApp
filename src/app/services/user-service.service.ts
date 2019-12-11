@@ -34,7 +34,7 @@ console.log("sss",registrationForm)
         fullName: registrationForm.name,
         shopName: registrationForm.shopName,
         location: registrationForm.location,
-        username:registrationForm.username, 
+        email:registrationForm.email, 
         password:registrationForm.password      
       });
     });
