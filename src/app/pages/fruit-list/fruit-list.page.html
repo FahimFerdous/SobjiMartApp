@@ -16,7 +16,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid fixed *ngFor="let fruitsInfo of fruitsInfo">
+  <ion-grid fixed *ngFor="let fruitsInfo of filteredfruitsInfo">
     <ion-card>
       <ion-row class="ion-align-items-stretch">
         <ion-col size="4">
@@ -53,44 +53,7 @@
           >
         </ion-col>
       </ion-row>
-    </ion-card>
-    <ion-card>
-      <ion-row class="ion-align-items-stretch speaker-card">
-        <ion-col size="4">
-          <img
-            src="assets/img/potato.jpg"
-            alt=""
-            style="height: 75px; width: 140px; margin-top: 15px;"
-          />
-        </ion-col>
-        <ion-col size="8">
-          <p
-            style="margin-top: 0px;
-              font-size: 22px; margin-bottom: -5px;"
-          >
-            Potato
-          </p>
-          <ion-item style="margin-left: -16px;">
-            <ion-select
-              placeholder="Select value"
-              style="padding: 0; font-size: 14px;"
-            >
-              <ion-select-option value="brown">Tk 50 - 500gm</ion-select-option>
-              <ion-select-option value="blonde">Tk 100 - 1kg</ion-select-option>
-              <ion-select-option value="black">Tk 200 - 3kg</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <p style="float: left; font-weight: 500;">Tk. 50</p>
-          <ion-button
-            color="primary"
-            style="margin-left: 30%;
-              height: 29px;
-              margin-top: 10px;"
-            >Add Item</ion-button
-          >
-        </ion-col>
-      </ion-row>
-    </ion-card>
+    </ion-card>    
   </ion-grid>
 </ion-content>
 

@@ -26,7 +26,7 @@ filteredfruitsInfo:fruitsInfo[]=[];
          this.fruitsInfo.push(y as fruitsInfo);
                
       });
-      console.log(this.fruitsInfo);
+     this.filteredfruitsInfo=this.fruitsInfo;
     })
   }
   filter(query) { 

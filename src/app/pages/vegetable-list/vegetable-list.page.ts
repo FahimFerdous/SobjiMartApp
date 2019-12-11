@@ -25,7 +25,7 @@ filteredVegetables:AddVegetableInof[]=[];
          this.vegetables.push(y as AddVegetableInof);
                
       });
-      console.log(this.vegetables);
+      this.filteredVegetables=this.vegetables;
     })
 
   }
