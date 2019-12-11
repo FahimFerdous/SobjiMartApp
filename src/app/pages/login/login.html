@@ -18,7 +18,7 @@
       <ion-item>
         <ion-label position="stacked" color="primary">Username</ion-label>
         <ion-input
-          [(ngModel)]="login.username"
+          [(ngModel)]="appUser.email"
           name="username"
           type="text"
           #username="ngModel"
@@ -41,7 +41,7 @@
       <ion-item>
         <ion-label position="stacked" color="primary">Password</ion-label>
         <ion-input
-          [(ngModel)]="login.password"
+          [(ngModel)]="appUser.password"
           name="password"
           type="password"
           #password="ngModel"
@@ -62,7 +62,7 @@
 
     <ion-row>
       <ion-col>
-        <ion-button (click)="onLogin(loginForm)" type="submit" expand="block"
+        <ion-button (click)="login(appUser)"  type="submit" expand="block"
           >Login</ion-button
         >
       </ion-col>

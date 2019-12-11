@@ -15,6 +15,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
+import { AuthService } from './services/auth.service';
 @NgModule({
   imports: [
     BrowserModule,
@@ -30,7 +31,7 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar,AngularFireStorage],
+  providers: [InAppBrowser, SplashScreen, StatusBar,AngularFireStorage,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

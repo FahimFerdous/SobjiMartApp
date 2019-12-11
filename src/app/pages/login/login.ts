@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { UserData } from '../../providers/user-data';
 
 import { UserOptions } from '../../interfaces/user-options';
+import { signUp } from '../../../Model/signup';
+import { AuthService } from '../../services/auth.service';
 
 
 
@@ -14,24 +16,25 @@ import { UserOptions } from '../../interfaces/user-options';
   styleUrls: ['./login.scss'],
 })
 export class LoginPage {
-  login: UserOptions = { username: '', password: '' };
-  submitted = false;
+  appUser= new signUp()
 
-  constructor(
+  constructor(private auth:AuthService,
     public userData: UserData,
     public router: Router
   ) { }
 
   onLogin(form: NgForm) {
-    this.submitted = true;
-
-    if (form.valid) {
-      this.userData.login(this.login.username);
-      this.router.navigateByUrl('/app/tabs/schedule');
-    }
+   
   }
 
   onSignup() {
     this.router.navigateByUrl('/signup');
   }
+  login(loginForm){
+    console.log(loginForm);
+     this.auth.signIn(loginForm.email,loginForm.password).then(success=>{ 
+    }).catch(error=>{
+      alert(error.message);
+    });
+     }
 }
