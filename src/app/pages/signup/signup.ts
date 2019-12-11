@@ -7,7 +7,7 @@ import { signUp } from '../../../Model/signup';
 import { UserServiceService } from '../../services/user-service.service';
 import { Observable,of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import undefined = require('firebase/empty-import');
+
 
 
 @Component({
