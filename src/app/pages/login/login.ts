@@ -30,11 +30,17 @@ export class LoginPage {
   onSignup() {
     this.router.navigateByUrl('/signup');
   }
+
+
   login(loginForm){
     console.log(loginForm);
-     this.auth.signIn(loginForm.email,loginForm.password).then(success=>{ 
-    }).catch(error=>{
-      alert(error.message);
-    });
+     this.auth.signIn(loginForm.email,loginForm.password).then(success=>{
+      // console.log('login success',success.user);
+      this.router.navigateByUrl('/');
+              }).catch(error=>{
+            alert(error.message);
+        });
      }
+
+     
 }
