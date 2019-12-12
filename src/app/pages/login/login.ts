@@ -36,7 +36,7 @@ export class LoginPage {
     console.log(loginForm);
      this.auth.signIn(loginForm.email,loginForm.password).then(success=>{
       // console.log('login success',success.user);
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/app/tabs/schedule');
               }).catch(error=>{
             alert(error.message);
         });
