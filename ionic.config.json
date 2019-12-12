@@ -1,7 +1,8 @@
 {
-  "name": "ionic-conference-app",
+  "name": "Shobji Mart",
   "type": "angular",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   }
 }
