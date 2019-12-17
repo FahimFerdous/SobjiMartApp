@@ -91,7 +91,12 @@ const routes: Routes = [
   { path: 'approve-user', 
   loadChildren: ()=> import("./pages/approve-user/approve-user.module").then(
     m=>m.ApproveUserPageModule
+  ) },
+  { path: 'admin-panel', 
+  loadChildren: ()=> import("./pages/admin-panel/admin-panel.module").then(
+    m=>m.AdminPanelPageModule
   ) }
+
 
 ];
 
