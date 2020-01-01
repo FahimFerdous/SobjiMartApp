@@ -474,7 +474,7 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: "",
-        redirectTo: "/tutorial",
+        redirectTo: "/login",
         pathMatch: "full"
     },
     {
