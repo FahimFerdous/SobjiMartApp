@@ -60,7 +60,7 @@ export class SchedulePage implements OnInit,OnDestroy {
 
   }
   ngOnDestroy(){
-    this.subscription.unsubscribe();
+   // this.subscription.unsubscribe();
   }
  searchLocation(locationName){
   this.searchLtion=[];

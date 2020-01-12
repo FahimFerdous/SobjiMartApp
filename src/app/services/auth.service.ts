@@ -4,6 +4,7 @@ import { signUp } from '../../Model/signup';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { UserServiceService } from './user-service.service';
+import { switchMap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -23,4 +24,6 @@ export class AuthService {
   logout() { 
     this.afAuth.auth.signOut();
   } 
+
+ 
 }

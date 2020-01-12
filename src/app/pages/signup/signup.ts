@@ -29,7 +29,7 @@ errorMessage:string;
   onSignup(form) {
     this.submitted = true;
     console.log(form);
-
+    
     if(form.email!=""&&form.password!=""&&form.length!= 0&&form.email&&form.password) {
       this.UserService.signUp(form).then(t=>this.router.navigateByUrl('/app/tabs/schedule')).catch(error=>{
         // alert(error.message);

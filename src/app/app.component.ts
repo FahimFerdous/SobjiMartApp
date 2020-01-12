@@ -18,6 +18,7 @@ import { UserData } from './providers/user-data';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
+  isAdmin:string;
   appPages = [
     {
       title: 'Schedule',
@@ -54,7 +55,11 @@ export class AppComponent implements OnInit {
     private swUpdate: SwUpdate,
     private toastCtrl: ToastController,
   ) {
+   
     this.initializeApp();
+    this.isAdmin=localStorage.getItem("xyz");
+    console.log(this.isAdmin);
+    
   }
 
   async ngOnInit() {

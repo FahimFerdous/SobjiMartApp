@@ -426,7 +426,7 @@ module.exports = webpackAsyncContext;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\r\n  <ion-split-pane>\r\n    <ion-menu>\r\n      <ion-header>\r\n        <ion-toolbar>\r\n          <ion-title>Menu</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list>\r\n          <ion-menu-toggle autoHide=\"false\">\r\n            <ion-item routerLink=\"/add-location\" routerDirection=\"root\">\r\n              <ion-label>\r\n                Add Location\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n\r\n          <ion-menu-toggle autoHide=\"false\">\r\n            <ion-item routerLink=\"/add-vegetable-inof\" routerDirection=\"root\">\r\n              <ion-label>\r\n                Add Vegetable Info\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n\r\n          <ion-menu-toggle autoHide=\"false\">\r\n            <ion-item routerLink=\"/add-fruits-info\" routerDirection=\"root\">\r\n              <ion-label>\r\n                Add Fruits Info\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle autoHide=\"false\">\r\n            <ion-item routerLink=\"/approve-user\" routerDirection=\"root\">\r\n              <ion-label>\r\n                Approve User\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n\r\n    <ion-router-outlet main></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n"
+module.exports = "<ion-app>\r\n  <ion-split-pane>\r\n    <ion-menu>\r\n      <ion-header>\r\n        <ion-toolbar>\r\n          <ion-title>Menu</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list>\r\n          <ion-menu-toggle *ngIf=\"isAdmin=='true'\" autoHide=\"false\">\r\n            <ion-item routerLink=\"/add-location\" routerDirection=\"root\">\r\n              <ion-label>\r\n                Add Location\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n\r\n          <ion-menu-toggle *ngIf=\"isAdmin=='true'\"  autoHide=\"false\">\r\n            <ion-item   routerLink=\"/add-vegetable-inof\" routerDirection=\"root\">\r\n              <ion-label>\r\n                Add Vegetable Info\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle autoHide=\"false\">\r\n            <ion-item routerLink=\"/vegetable-list\" routerDirection=\"root\">\r\n              <ion-label>\r\n                Show Vegetables\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle *ngIf=\"isAdmin=='true'\" autoHide=\"false\">\r\n            <ion-item routerLink=\"/add-fruits-info\" routerDirection=\"root\">\r\n              <ion-label>\r\n                Add Fruits Info\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle  autoHide=\"false\">\r\n            <ion-item routerLink=\"/fruit-list\" routerDirection=\"root\">\r\n              <ion-label>\r\n                Show Fruits\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle *ngIf=\"isAdmin=='true'\" autoHide=\"false\">\r\n            <ion-item routerLink=\"/approve-user\" routerDirection=\"root\">\r\n              <ion-label>\r\n                Approve User\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n\r\n    <ion-router-outlet main></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n"
 
 /***/ }),
 
@@ -474,7 +474,7 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: "",
-        redirectTo: "/login",
+        redirectTo: "/tutorial",
         pathMatch: "full"
     },
     {
@@ -531,7 +531,9 @@ const routes = [
         loadChildren: () => Promise.all(/*! import() | pages-fruit-list-fruit-list-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-fruit-list-fruit-list-module")]).then(__webpack_require__.bind(null, /*! ./pages/fruit-list/fruit-list.module */ "./src/app/pages/fruit-list/fruit-list.module.ts")).then(m => m.FruitListPageModule)
     },
     { path: 'approve-user',
-        loadChildren: () => __webpack_require__.e(/*! import() | pages-approve-user-approve-user-module */ "pages-approve-user-approve-user-module").then(__webpack_require__.bind(null, /*! ./pages/approve-user/approve-user.module */ "./src/app/pages/approve-user/approve-user.module.ts")).then(m => m.ApproveUserPageModule) }
+        loadChildren: () => __webpack_require__.e(/*! import() | pages-approve-user-approve-user-module */ "pages-approve-user-approve-user-module").then(__webpack_require__.bind(null, /*! ./pages/approve-user/approve-user.module */ "./src/app/pages/approve-user/approve-user.module.ts")).then(m => m.ApproveUserPageModule) },
+    { path: 'admin-panel',
+        loadChildren: () => __webpack_require__.e(/*! import() | pages-admin-panel-admin-panel-module */ "pages-admin-panel-admin-panel-module").then(__webpack_require__.bind(null, /*! ./pages/admin-panel/admin-panel.module */ "./src/app/pages/admin-panel/admin-panel.module.ts")).then(m => m.AdminPanelPageModule) }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -553,7 +555,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".active {\n  color: var(--ion-color-primary);\n}\n.active ion-icon {\n  color: var(--ion-color-primary);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxVc2VyXFxEb2N1bWVudHNcXFByYWN0aXNlRmlsZVxcU29iamlNYXJ0QXBwL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLCtCQUFBO0FDQ0Y7QURBRTtFQUNFLCtCQUFBO0FDRUoiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWN0aXZlIHtcclxuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG4gIGlvbi1pY29uIHtcclxuICAgIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbiAgfVxyXG59XHJcbiIsIi5hY3RpdmUge1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xufVxuLmFjdGl2ZSBpb24taWNvbiB7XG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XG59Il19 */"
+module.exports = ".active {\n  color: var(--ion-color-primary);\n}\n.active ion-icon {\n  color: var(--ion-color-primary);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxVU0VSXFxEZXNrdG9wXFxTb2JqaU1hcnRBcHAvc3JjXFxhcHBcXGFwcC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsK0JBQUE7QUNDRjtBREFFO0VBQ0UsK0JBQUE7QUNFSiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hY3RpdmUge1xyXG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbiAgaW9uLWljb24ge1xyXG4gICAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcclxuICB9XHJcbn1cclxuIiwiLmFjdGl2ZSB7XG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XG59XG4uYWN0aXZlIGlvbi1pY29uIHtcbiAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcbn0iXX0= */"
 
 /***/ }),
 
@@ -621,6 +623,8 @@ let AppComponent = class AppComponent {
         ];
         this.loggedIn = false;
         this.initializeApp();
+        this.isAdmin = localStorage.getItem("xyz");
+        console.log(this.isAdmin);
     }
     ngOnInit() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
@@ -988,12 +992,13 @@ AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!**************************************************!*\
   !*** ./src/app/services/user-service.service.ts ***!
   \**************************************************/
-/*! exports provided: UserServiceService */
+/*! exports provided: UserServiceService, AppUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserServiceService", function() { return UserServiceService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppUser", function() { return AppUser; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/es2015/index.js");
@@ -1045,6 +1050,8 @@ UserServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabase"], _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"]])
 ], UserServiceService);
 
+class AppUser {
+}
 
 
 /***/ }),
@@ -1120,7 +1127,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\User\Documents\PractiseFile\SobjiMartApp\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\USER\Desktop\SobjiMartApp\src\main.ts */"./src/main.ts");
 
 
 /***/ })
